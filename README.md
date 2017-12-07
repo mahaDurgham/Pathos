@@ -1,2 +1,1 @@
-# Pathos
-you know
+# pathos
