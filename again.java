@@ -16,6 +16,7 @@ public class again extends javax.swing.JFrame {
     public again() {
         initComponents();
         visible.setVisible(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -29,37 +30,36 @@ public class again extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        userName = new javax.swing.JTextField();
         passWord = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        login = new javax.swing.JButton();
         showPassWord = new javax.swing.JButton();
         visible = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        newUser = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 255, 51));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pathosLogo.PNG"))); // NOI18N
         jLabel1.setToolTipText("");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(50, 30, 250, 170);
+        jLabel1.setBounds(160, 20, 250, 170);
 
-        jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
-        jLabel2.setText("User Name");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(350, 250, 110, 40);
-
-        jLabel3.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
-        jLabel3.setText("Password");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(350, 310, 100, 40);
-
-        jTextField1.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(460, 260, 180, 30);
+        userName.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
+        userName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userNameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(userName);
+        userName.setBounds(190, 230, 190, 30);
 
         passWord.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
         passWord.addActionListener(new java.awt.event.ActionListener() {
@@ -68,12 +68,17 @@ public class again extends javax.swing.JFrame {
             }
         });
         jPanel1.add(passWord);
-        passWord.setBounds(460, 320, 180, 30);
+        passWord.setBounds(190, 290, 190, 30);
 
-        jButton1.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
-        jButton1.setText("Login");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(490, 370, 110, 29);
+        login.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
+        login.setText("Login");
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
+        jPanel1.add(login);
+        login.setBounds(220, 350, 120, 29);
 
         showPassWord.setFont(new java.awt.Font("Monotype Corsiva", 0, 13)); // NOI18N
         showPassWord.setText("show password");
@@ -83,15 +88,78 @@ public class again extends javax.swing.JFrame {
             }
         });
         jPanel1.add(showPassWord);
-        showPassWord.setBounds(650, 320, 110, 30);
+        showPassWord.setBounds(400, 290, 110, 30);
         jPanel1.add(visible);
         visible.setBounds(660, 260, 0, 0);
+
+        jPanel2.setBackground(new java.awt.Color(75, 119, 190));
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(51, 51, 51), null, null));
+
+        jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("User Name");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(50, 230, 100, 30);
+
+        jPanel3.setBackground(new java.awt.Color(75, 119, 190));
+        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(51, 51, 51), null, null));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Password");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(50, 290, 100, 30);
+
+        newUser.setFont(new java.awt.Font("Monotype Corsiva", 1, 14)); // NOI18N
+        newUser.setForeground(new java.awt.Color(75, 119, 190));
+        newUser.setText("click here to create a new user!");
+        newUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        newUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                newUserMouseClicked(evt);
+            }
+        });
+        jPanel1.add(newUser);
+        newUser.setBounds(190, 380, 200, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,11 +180,29 @@ public class again extends javax.swing.JFrame {
         visible.setText(("set"));
         }
         else{
-            passWord.setEchoChar('*');
+            passWord.setEchoChar('\u25cf');
             visible.setText("");
+            
         }
         
     }//GEN-LAST:event_showPassWordActionPerformed
+
+    private void userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userNameActionPerformed
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginActionPerformed
+
+    private void newUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newUserMouseClicked
+        // TODO add your handling code here:
+        createUser frame1=new createUser();
+        frame1.setVisible(true);
+        frame1.pack();
+        frame1.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_newUserMouseClicked
 
     /**
      * @param args the command line arguments
@@ -154,14 +240,17 @@ public class again extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton login;
+    private javax.swing.JLabel newUser;
     private javax.swing.JPasswordField passWord;
     private javax.swing.JButton showPassWord;
+    private javax.swing.JTextField userName;
     private javax.swing.JLabel visible;
     // End of variables declaration//GEN-END:variables
 }
